@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        tools:context=".ui.home.HomeActivity">
+
+        <EditText
+            android:id="@+id/ah_data_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Type your text here..."
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/ah_data_view_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Your received text will show here..."
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/ah_data_status_view_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ah_recv_mtrBtn" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:text="Send Data over Sound"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            app:drawableEndCompat="@drawable/ic_sound"
+            app:drawableStartCompat="@drawable/ic_sound"
+            app:fontFamily="@font/montserrat_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ah_send_mtrBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:onClick="handleSendClick"
+            android:text="Send"
+            app:layout_constraintEnd_toEndOf="@+id/ah_data_et"
+            app:layout_constraintStart_toStartOf="@+id/ah_data_et"
+            app:layout_constraintTop_toBottomOf="@+id/ah_data_et" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ah_recv_mtrBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="handleRecvClick"
+            android:text="Recieve"
+            app:layout_constraintEnd_toEndOf="@+id/ah_send_mtrBtn"
+            app:layout_constraintStart_toStartOf="@+id/ah_send_mtrBtn"
+            app:layout_constraintTop_toBottomOf="@+id/ah_send_mtrBtn" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ah_config_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:backgroundTint="@color/colorAccent"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="handleConfigFabClick"
+            app:layout_constraintBottom_toBottomOf="@+id/ah_data_status_view_tv"
+            app:layout_constraintEnd_toEndOf="@+id/ah_data_status_view_tv"
+            app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+        <TextView
+            android:id="@+id/ah_data_status_view_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Status here..."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ah_data_view_tv"
+            app:layout_constraintStart_toStartOf="@+id/ah_data_view_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+    </data>
+</layout>

@@ -1,0 +1,3 @@
+include ':tone'
+include ':app'
+rootProject.name = "eziotone"

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="Configure Parameters below"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:drawableEndCompat="@drawable/ic_sound"
+                app:drawableStartCompat="@drawable/ic_sound"
+                app:fontFamily="@font/montserrat_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Step Frequency"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:fontFamily="@font/montserrat_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ac_stepf_tipl"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toTopOf="@+id/ac_stepf_tipl" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Low Frequency"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:fontFamily="@font/montserrat_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ac_lowf_tipl"
+                app:layout_constraintEnd_toStartOf="@+id/ac_lowf_tipl"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ac_lowf_tipl" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hail Frequency"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:fontFamily="@font/montserrat_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ac_hailf_tipl"
+                app:layout_constraintStart_toStartOf="@+id/textView11"
+                app:layout_constraintTop_toTopOf="@+id/ac_hailf_tipl" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample Frequency"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:fontFamily="@font/montserrat_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ac_sampf_tipl"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/ac_sampf_tipl" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duration"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:fontFamily="@font/montserrat_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ac_duration_tipl"
+                app:layout_constraintStart_toStartOf="@+id/textView10"
+                app:layout_constraintTop_toTopOf="@+id/ac_duration_tipl" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ac_done_mtrBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:onClick="handleDoneClick"
+                android:text="Done"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ac_hailf_tipl" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ac_reset_mtrBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:onClick="handleResetClick"
+                android:text="Reset"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ac_done_mtrBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/ac_done_mtrBtn"
+                app:layout_constraintTop_toBottomOf="@+id/ac_done_mtrBtn"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ac_lowf_tipl"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:minWidth="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ac_lowf_tipet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="numberSigned"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ac_stepf_tipl"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:minWidth="100dp"
+                app:layout_constraintEnd_toEndOf="@+id/ac_lowf_tipl"
+                app:layout_constraintStart_toStartOf="@+id/ac_lowf_tipl"
+                app:layout_constraintTop_toBottomOf="@+id/ac_lowf_tipl">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ac_stepf_tipet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="numberSigned"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ac_sampf_tipl"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:minWidth="100dp"
+                app:layout_constraintEnd_toEndOf="@+id/ac_stepf_tipl"
+                app:layout_constraintStart_toStartOf="@+id/ac_stepf_tipl"
+                app:layout_constraintTop_toBottomOf="@+id/ac_stepf_tipl">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ac_sampf_tipet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="numberSigned"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ac_duration_tipl"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:minWidth="100dp"
+                app:layout_constraintEnd_toEndOf="@+id/ac_sampf_tipl"
+                app:layout_constraintStart_toStartOf="@+id/ac_sampf_tipl"
+                app:layout_constraintTop_toBottomOf="@+id/ac_sampf_tipl">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ac_duration_tipet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ac_hailf_tipl"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:minWidth="100dp"
+                app:layout_constraintEnd_toEndOf="@+id/ac_duration_tipl"
+                app:layout_constraintStart_toStartOf="@+id/ac_duration_tipl"
+                app:layout_constraintTop_toBottomOf="@+id/ac_duration_tipl">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ac_hailf_tipet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="numberSigned"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <data>
+
+    </data>
+</layout>
