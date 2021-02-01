@@ -63,19 +63,6 @@ android {
         }
     }
 
-    signingConfigs {
-        release {
-            try {
-                keyAlias KEY_ALIAS
-                keyPassword KEY_PASSWORD
-                storeFile file(KEYSTORE_PATH)
-                storePassword KEYSTORE_PASSWORD
-            } catch (e) {
-                throw new InvalidUserDataException("You must check all the variable in the gradle.properties file.")
-            }
-        }
-    }
-
     buildTypes {
         debug {
             minifyEnabled false
@@ -85,17 +72,6 @@ android {
             resValue "string", "name_app", "Eziotone_debug"
             resValue "string", "app_version",
                     "${defaultConfig.versionName}${versionNameSuffix}"
-        }
-        release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-            resValue "string", "app_version",
-                    "${defaultConfig.versionName}"
-        }
-        releaseDebuggable {
-            initWith release
-            debuggable true
         }
     }
 
